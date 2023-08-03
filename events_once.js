@@ -1,12 +1,12 @@
-//Aqui no ON ele vai chamar todos os eventos.
+//Aqui no ONCE ele vai ouvir so o primeiro e desconsiderar os outros
 
 const { EventEmitter } = require("events");
 
 const ev = new EventEmitter();
 
-ev.on("saySomething", (menssagem) => {
+ev.once("saySomething", (menssagem) => {
   console.log("Eu ouvi você", menssagem);
 });
 
 ev.emit("saySomething", "Maurício");
-ev.emit("saySomething", "João");
+ev.emit("saySomething", "joão");
